@@ -1,0 +1,40 @@
+{
+  "extends": "@tsconfig/node18/tsconfig.json",
+  "compilerOptions": {
+    "lib": ["es2020"],
+    "skipLibCheck": true,
+    "module": "commonjs",
+    "forceConsistentCasingInFileNames": true,
+    "rootDir": ".",
+    "outDir": "build",
+    "sourceMap": true,
+    "target": "es2020",
+    // to import json
+    "resolveJsonModule": true,
+    "noImplicitAny": true,
+    // for TypeGraphQL
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "isolatedModules": true,
+    // Generate d.ts files
+    "declaration": true,
+    "useUnknownInCatchVariables": false
+  },
+  "moduleResolution": "node",
+  // NEW: Options for file/directory watching
+  "watchOptions": {
+    // Use native file system events for files and directories
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents",
+    // Poll files for updates more frequently
+    // when they're updated a lot.
+    "fallbackPolling": "dynamicPriority",
+    // Don't coalesce watch notification
+    "synchronousWatchDirectory": true,
+    // Finally, two additional settings for reducing the amount of possible
+    // files to track  work from these directories
+    "excludeDirectories": ["**/node_modules", "build"]
+  }
+}

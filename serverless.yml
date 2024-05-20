@@ -1,0 +1,43 @@
+service: mock
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+  - serverless-dotenv-plugin
+  - serverless-domain-manager
+  - serverless-prune-plugin
+  
+provider:
+  name: aws
+  stage: ${env:ALIAS}
+  runtime: nodejs18.x
+  region: ${env:REGION}
+  stackName: shaman-auth2-private-api-${env:ALIAS}
+
+custom:
+  serverlessPluginTypescript:
+    tsConfigFileLocation: './tsconfig.json'
+
+  prune:
+    automatic: true
+    number: 3
+
+  serverless-offline:
+    host: 0.0.0.0
+    httpPort: 3000
+    lambdaPort: 3002
+
+functions:
+  graphql:
+    timeout: 29
+    memorySize: 512
+    handler: src/app.graphqlHandler
+    events:
+      - http:
+          path: /
+          method: POST
+          cors: true
+      - http:
+          path: /
+          method: GET
+          cors: true

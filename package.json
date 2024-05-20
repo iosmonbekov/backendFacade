@@ -1,0 +1,39 @@
+{
+  "name": "backendfacade",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "codegen": "npx graphql-codegen --config codegen.ts",
+    "dev": "serverless offline"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@apollo/server": "^4.9.4",
+    "@as-integrations/aws-lambda": "^3.1.0",
+    "@graphql-tools/schema": "^9.0.17",
+    "graphql": "^16.8.1",
+    "graphql-constraint-directive": "^5.0.0",
+    "graphql-modules": "^2.1.2",
+    "graphql-scalars": "^1.20.1",
+    "graphql-tag": "^2.12.6"
+  },
+  "devDependencies": {
+    "@graphql-codegen/add": "^4.0.1",
+    "@graphql-codegen/cli": "^3.2.1",
+    "@graphql-codegen/graphql-modules-preset": "^3.1.1",
+    "@graphql-codegen/introspection": "^3.0.1",
+    "@graphql-codegen/typescript": "^3.0.1",
+    "@graphql-codegen/typescript-resolvers": "^3.1.0",
+    "@tsconfig/node18": "^1.0.1",
+    "serverless-domain-manager": "^7.0.4",
+    "serverless-dotenv-plugin": "^6.0.0",
+    "serverless-offline": "^12.0.4",
+    "serverless-plugin-typescript": "^2.1.4",
+    "serverless-prune-plugin": "^2.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.5"
+  }
+}

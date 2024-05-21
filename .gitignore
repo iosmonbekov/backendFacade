@@ -1,5 +1,9 @@
 /node_modules
 /build
+/.build
+.build
 
 __generated-*
 .env
+.serverless
+

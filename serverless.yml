@@ -4,7 +4,6 @@ plugins:
   - serverless-plugin-typescript
   - serverless-offline
   - serverless-dotenv-plugin
-  - serverless-domain-manager
   - serverless-prune-plugin
   
 provider:
